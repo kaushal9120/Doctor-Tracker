@@ -1,0 +1,10 @@
+
+    <h1>Sucessfully registered</h1>
+    {% if all_doctor %}
+
+        {% for i in all_doctor %}
+        {{i.firstname}}{{i.lastname}}
+        <img src="{{MEDIA_URL}}{{i.profile_pic.url}}">
+        {% endfor %}
+    {% endif %}
+ 

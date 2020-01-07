@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-10 col-lg-9 col-xl-6">
+          <!--Panel-->
+          {% if all_doctor%}
+          {% for d in all_doctor%}
+        <div class="card mb-3">
+            <h3 class="card-header indigo white-text text-uppercase text-center">{{d.firstname}} {{d.lastname}}</h3>
+            <div class="card-body">
+
+                <div class="media d-block d-md-flex mt-md-0 mt-4 mb-4">
+                    <img class="d-flex mb-md-0 mb-3 avatar-2 rounded-circle z-depth-1 mx-auto" src="{{MEDIA_URL}}{{d.profile_pic.url}}"
+                        alt="Generic placeholder image">
+                    <div class="media-body ml-md-3 ml-0">
+                        <p align="justify">
+                            {{d.about_doc}}
+                        </p>
+                        <div class=text-centerext-md-left">
+                            <button type="button" class="btn btn-indigo btn-rounded btn-md">Read more</button>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!--/.Panel-->
+    </div>
+
+
+</body>
+</html>
